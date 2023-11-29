@@ -1,8 +1,11 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
-export default axios.create({
+const apiCient = axios.create({
   baseURL: import.meta.env.VITE_REACT_APP_API_URL,
-  headers: {
+  params: {
     key: import.meta.env.VITE_REACT_APP_API_KEY,
   },
 });
+
+export default apiCient;
+export { AxiosError as CanceledError };
